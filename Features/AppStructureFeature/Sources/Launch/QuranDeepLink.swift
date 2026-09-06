@@ -33,10 +33,7 @@ extension QuranDeepLink {
             self = .sura(sura)
             return
         }
-        guard let ayah = AyahNumber(sura: sura, ayah: numbers[1]) else {
-            return nil
-        }
-        self = .ayah(ayah)
+        self = .ayah(AyahNumber(sura: sura, ayah: numbers[1]) ?? sura.firstVerse)
     }
 
     // MARK: Private
