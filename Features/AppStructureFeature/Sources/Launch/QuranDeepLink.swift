@@ -47,9 +47,6 @@ extension QuranDeepLink {
     /// not from the path.
     private static func segments(of url: URL) -> [String] {
         var segments: [String] = []
-        if let host = url.host, !host.isEmpty {
-            segments.append(host)
-        }
         segments.append(contentsOf: url.pathComponents.filter { $0 != "/" })
         return segments
     }
