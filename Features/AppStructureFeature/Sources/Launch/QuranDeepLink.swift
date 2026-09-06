@@ -20,9 +20,6 @@ extension QuranDeepLink {
     /// format handled by `QuranForwarderActivity` on Android. Non numeric segments are
     /// skipped, so `quran://sura/2/255` resolves the same way `quran://2/255` does.
     init?(url: URL, quran: Quran) {
-        guard let scheme = url.scheme?.lowercased(), Self.supportedSchemes.contains(scheme) else {
-            return nil
-        }
 
         let numbers = Self.segments(of: url).compactMap { Int($0) }
         guard let suraNumber = numbers.first, let sura = Sura(quran: quran, suraNumber: suraNumber) else {
