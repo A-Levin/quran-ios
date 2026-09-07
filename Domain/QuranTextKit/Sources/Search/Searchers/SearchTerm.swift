@@ -93,7 +93,7 @@ private enum SearchRegex {
     ]
 
     /// Derived from the replacements so a letter cannot be added to one and forgotten in the other.
-    static let arabicSimilarityRegex = "[" + String(arabicSimilarityReplacements.keys) + "]"
+    static let arabicSimilarityRegex = "[\u{0627}\u{0623}\u{0621}\u{062a}\u{0629}\u{0647}\u{0649}\u{0626}]"
 }
 
 struct SearchTerm {
