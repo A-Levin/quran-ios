@@ -29,7 +29,6 @@ public struct ReciterAudioBackupExcluder: Sendable {
         let audioFiles = Reciter.audioFiles
         do {
             try fileSystem.createDirectory(at: audioFiles, withIntermediateDirectories: true)
-            try fileSystem.setExcludedFromBackup(true, at: audioFiles)
         } catch {
             logger.error("Couldn't exclude audio files from backup. Error: \(error)")
         }
