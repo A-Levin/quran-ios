@@ -16,7 +16,7 @@ extension Runs {
 
     var preferenceValue: Int {
         switch self {
-        case .finite(let count): return max(count, 1)
+        case .finite(let count): return count
         case .indefinite: return 0
         }
     }
