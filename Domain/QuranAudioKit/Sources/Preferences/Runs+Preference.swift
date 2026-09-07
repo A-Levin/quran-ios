@@ -11,7 +11,7 @@ extension Runs {
     /// Endless repetition is stored as `0`, since a finite number of runs is always
     /// at least one. A stored value that is not a usable count reads back as endless.
     init(preferenceValue: Int) {
-        self = preferenceValue > 0 ? .finite(preferenceValue) : .indefinite
+        self = preferenceValue >= 0 ? .finite(preferenceValue) : .indefinite
     }
 
     var preferenceValue: Int {
