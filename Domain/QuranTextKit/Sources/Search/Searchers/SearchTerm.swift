@@ -51,10 +51,6 @@ private enum SearchRegex {
         // the Arabic letters used by the mushaf, so a search from those keyboards has
         // to reach the Arabic spelling.
 
-        // given: ک
-        // match: كک
-        "\u{06a9}": "\u{0643}\u{06a9}",
-
         // given: ی
         // match: يﻯی
         "\u{06cc}": "\u{064a}\u{0649}\u{06cc}",
