@@ -79,7 +79,7 @@ endef
 .PHONY: install-swiftlint build-for-analyzer swiftlint-analyzer
 
 test-no-sync:
-	$(WITHOUT_QURAN_SYNC) xcrun xcodebuild -derivedDataPath "$(WITHOUT_QURAN_SYNC_DERIVED_DATA)" build test -scheme "$(PACKAGE_SCHEME)" $(TEST_FILTER) -sdk "$(PACKAGE_SDK)" -destination "$(PACKAGE_DESTINATION)" 2>&1 | xcbeautify --renderer github-actions
+	$(WITHOUT_QURAN_SYNC) xcrun xcodebuild COMPILER_INDEX_STORE_ENABLE=NO -derivedDataPath "$(WITHOUT_QURAN_SYNC_DERIVED_DATA)" build test -scheme "$(PACKAGE_SCHEME)" $(TEST_FILTER) -sdk "$(PACKAGE_SDK)" -destination "$(PACKAGE_DESTINATION)" 2>&1 | xcbeautify --renderer github-actions
 
 test-sync:
 	$(WITH_QURAN_SYNC) xcrun xcodebuild -derivedDataPath "$(WITH_QURAN_SYNC_DERIVED_DATA)" build test -scheme "$(PACKAGE_SCHEME)" $(TEST_FILTER) -sdk "$(PACKAGE_SDK)" -destination "$(PACKAGE_DESTINATION)" 2>&1 | xcbeautify --renderer github-actions
