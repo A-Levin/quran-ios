@@ -55,10 +55,6 @@ private enum SearchRegex {
         // match: كک
         "\u{06a9}": "\u{0643}\u{06a9}",
 
-        // given: ی
-        // match: يﻯی
-        "\u{06cc}": "\u{064a}\u{0649}\u{06cc}",
-
         // given: ے
         // match: يﻯے
         "\u{06d2}": "\u{064a}\u{0649}\u{06d2}",
