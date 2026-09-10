@@ -22,7 +22,7 @@ public struct WordTextPreferences {
 
     public var isWordPointerActive: Bool {
         get { isWordPointerActiveStorage.wrappedValue }
-        set { isWordPointerActiveStorage.wrappedValue = false }
+        nonmutating set { isWordPointerActiveStorage.wrappedValue = false }
     }
 
     // MARK: Private
