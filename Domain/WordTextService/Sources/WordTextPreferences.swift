@@ -20,12 +20,15 @@ public struct WordTextPreferences {
     @TransformedPreference(wordTextType, transformer: .rawRepresentable(defaultValue: defaultWordTextType))
     public var wordTextType: WordTextType
 
-    @Preference(isWordPointerActive)
-    public var isWordPointerActive: Bool
+    public var isWordPointerActive: Bool {
+        get { isWordPointerActiveStorage.wrappedValue }
+        set { isWordPointerActiveStorage.wrappedValue = false }
+    }
 
     // MARK: Private
 
     private static let defaultWordTextType = WordTextType.translation
     private static let wordTextType = PreferenceKey<Int>(key: "wordTranslationType", defaultValue: defaultWordTextType.rawValue)
     private static let isWordPointerActive = PreferenceKey<Bool>(key: "isWordPointerActive", defaultValue: false)
+    private let isWordPointerActiveStorage = Preference(isWordPointerActive)
 }
