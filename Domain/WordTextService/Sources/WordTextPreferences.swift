@@ -27,5 +27,5 @@ public struct WordTextPreferences {
 
     private static let defaultWordTextType = WordTextType.translation
     private static let wordTextType = PreferenceKey<Int>(key: "wordTranslationType", defaultValue: defaultWordTextType.rawValue)
-    private static let isWordPointerActive = PreferenceKey<Bool>(key: "isWordPointerActive", defaultValue: false)
+    private static let isWordPointerActive = PreferenceKey<Bool>(key: "isWordPointerActive", defaultValue: true)
 }
