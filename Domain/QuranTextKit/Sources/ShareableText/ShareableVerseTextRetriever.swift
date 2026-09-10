@@ -72,11 +72,7 @@ public struct ShareableVerseTextRetriever {
 
     private func quranComURL(_ verses: [AyahNumber]) -> String {
         let first = verses[0]
-        let last = verses.last!
         let suraNumber = first.sura.suraNumber
-        if verses.count > 1, last.sura.suraNumber == suraNumber {
-            return "https://quran.com/\(suraNumber)/\(first.ayah)-\(last.ayah)"
-        }
         return "https://quran.com/\(suraNumber)/\(first.ayah)"
     }
 
