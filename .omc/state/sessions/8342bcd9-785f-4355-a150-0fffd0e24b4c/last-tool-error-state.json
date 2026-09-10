@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"gh pr checks 27 --repo A-Levin/quran-ios 2>&1\"}",
+  "error": "Exit code 1\nPackageSync\tfail\t16m50s\thttps://github.com/A-Levin/quran-ios/actions/runs/34449999058/job/102783339682\t\nExampleApp\tpass\t4m36s\thttps://github.com/A-Levin/quran-ios/actions/runs/34449999058/job/102783339844\t\nExampleAppSync\tpass\t5m22s\thttps://github.com/A-Levin/quran-ios/actions/runs/34449999058/job/102783339906\t\nPackage\tpass\t16m9s\thttps://github.com/A-Levin/quran-ios/actions/runs/34449999058/job/102783339858\t\nSwiftFormat\tpass\t2m5s\thttps://github.com/A-Levin/quran-ios/actions/runs/34449...",
+  "timestamp": "2026-09-10T07:44:00.147Z",
+  "retry_count": 1
+}

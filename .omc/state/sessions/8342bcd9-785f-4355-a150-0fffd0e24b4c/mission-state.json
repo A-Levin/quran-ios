@@ -1,0 +1,77 @@
+{
+  "updatedAt": "2026-09-10T07:44:58.752Z",
+  "missions": [
+    {
+      "id": "session:8342bcd9-785f-4355-a150-0fffd0e24b4c:none",
+      "source": "session",
+      "name": "none",
+      "objective": "Session mission",
+      "createdAt": "2026-09-10T07:29:06.986Z",
+      "updatedAt": "2026-09-10T07:44:58.752Z",
+      "status": "done",
+      "workerCount": 1,
+      "taskCounts": {
+        "total": 1,
+        "pending": 0,
+        "blocked": 0,
+        "inProgress": 0,
+        "completed": 1,
+        "failed": 0
+      },
+      "agents": [
+        {
+          "name": "general-purpose:a321bbc",
+          "role": "general-purpose",
+          "ownership": "a321bbc8f39907730",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-09-10T07:44:58.752Z"
+        }
+      ],
+      "timeline": [
+        {
+          "id": "session-start:a321bbc8f39907730:2026-09-10T07:29:06.986Z",
+          "at": "2026-09-10T07:29:06.986Z",
+          "kind": "update",
+          "agent": "general-purpose:a321bbc",
+          "detail": "started general-purpose:a321bbc",
+          "sourceKey": "session-start:a321bbc8f39907730"
+        },
+        {
+          "id": "session-stop:a321bbc8f39907730:2026-09-10T07:29:32.434Z",
+          "at": "2026-09-10T07:29:32.434Z",
+          "kind": "completion",
+          "agent": "general-purpose:a321bbc",
+          "detail": "completed",
+          "sourceKey": "session-stop:a321bbc8f39907730"
+        },
+        {
+          "id": "session-start:a321bbc8f39907730:2026-09-10T07:43:55.975Z",
+          "at": "2026-09-10T07:43:55.975Z",
+          "kind": "update",
+          "agent": "general-purpose:a321bbc",
+          "detail": "started general-purpose:a321bbc",
+          "sourceKey": "session-start:a321bbc8f39907730"
+        },
+        {
+          "id": "session-stop:a4afe5d7e0e251066:2026-09-10T07:44:27.436Z",
+          "at": "2026-09-10T07:44:27.436Z",
+          "kind": "completion",
+          "agent": "general-purpose:a321bbc",
+          "detail": "completed",
+          "sourceKey": "session-stop:a4afe5d7e0e251066"
+        },
+        {
+          "id": "session-stop:ab36f9498ec654c32:2026-09-10T07:44:58.752Z",
+          "at": "2026-09-10T07:44:58.752Z",
+          "kind": "completion",
+          "agent": "general-purpose:a321bbc",
+          "detail": "completed",
+          "sourceKey": "session-stop:ab36f9498ec654c32"
+        }
+      ]
+    }
+  ]
+}

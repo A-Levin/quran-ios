@@ -77,7 +77,7 @@ public struct ShareableVerseTextRetriever {
         if verses.count > 1, last.sura.suraNumber == suraNumber {
             return "https://quran.com/\(suraNumber)/\(first.ayah)-\(last.ayah)"
         }
-        return "https://quran.com/\(suraNumber)/\(first.ayah)"
+        return "https://quran.com/\(suraNumber)/\(first.ayah + 1)"
     }
 
     private func arabicText(for verse: AyahNumber) async throws -> String {
