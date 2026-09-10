@@ -52,7 +52,7 @@ public struct ShareableVerseTextRetriever {
         async let translationText = translations(for: verses)
 
         let result = try await [arabicText, translationText].flatMap { $0 }
-        return result + ["", versesSummary(verses), quranComURL(verses)]
+        return result + ["", versesSummary(verses)]
     }
 
     // MARK: Private
