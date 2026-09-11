@@ -122,7 +122,7 @@ extension QuranDeepLink {
         if rawValue.lowercased() == "infinite" {
             return .indefinite
         }
-        guard let count = Int(rawValue), repeatRange.contains(count) else {
+        guard let count = Int(rawValue) else {
             throw AudioParameterError.invalid
         }
         return .finite(count)
