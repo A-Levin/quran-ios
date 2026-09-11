@@ -153,11 +153,11 @@ extension QuranDeepLink {
         }
 
         guard let sura = Sura(quran: quran, suraNumber: suraNumber),
-              let endAyah = AyahNumber(sura: sura, ayah: ayahNumber),
-              endAyah >= start
+              let endAyah = AyahNumber(sura: sura, ayah: ayahNumber)
         else {
             throw AudioParameterError.invalid
         }
+        _ = start
         return endAyah
     }
 
