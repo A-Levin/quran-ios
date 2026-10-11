@@ -1,0 +1,59 @@
+name: Sideload IPA
+
+on:
+  push:
+    branches:
+      - ci/sideload-ipa
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Branch or commit to build
+        required: true
+        default: feat/focus-mode
+
+permissions:
+  contents: read
+
+jobs:
+  ipa:
+    runs-on: macos-26
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.ref || github.sha }}
+
+      - name: Setting up Xcode
+        run: sudo xcode-select -s "/Applications/Xcode_26.2.app"
+
+      - name: Install xcbeautify
+        run: brew install xcbeautify
+
+      - name: Build for device
+        run: |
+          set -o pipefail
+          env QURAN_SYNC= xcrun xcodebuild \
+            -derivedDataPath .build/DerivedData/device \
+            build \
+            -project Example/QuranEngineApp.xcodeproj \
+            -scheme QuranEngineApp \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination "generic/platform=iOS" \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO \
+            2>&1 | xcbeautify --renderer github-actions
+
+      - name: Package IPA
+        run: |
+          app=.build/DerivedData/device/Build/Products/Release-iphoneos/QuranEngineApp.app
+          mkdir -p ipa/Payload
+          cp -R "$app" ipa/Payload/
+          (cd ipa && zip -qry "QuranEngineApp-$(git rev-parse --short HEAD).ipa" Payload)
+          ls -la ipa/*.ipa
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: QuranEngineApp-ipa
+          path: ipa/*.ipa
+          retention-days: 7
