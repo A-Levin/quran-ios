@@ -50,7 +50,6 @@ extension VerseOverlays {
     /// Filters overlays for rendering one page while preserving annotation visibility.
     public func restricted(to page: Page) -> Self {
         var overlays = self
-        overlays.restrictedFocusedVerses = focusedVerses.map { verses in verses.filter { $0.page == page } }
         overlays.playingVerses = playingVerses.filter { $0.page == page }
         overlays.selectedVerses = selectedVerses.filter { $0.page == page }
         overlays.navigationTarget = navigationTarget.flatMap { $0.page == page ? $0 : nil }
