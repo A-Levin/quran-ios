@@ -11,7 +11,7 @@ struct TranslationPageSection: Equatable, Identifiable {
     var id: Page { page }
 
     func scrollTarget(for item: TranslationItemId?) -> TranslationItemId? {
-        guard let item, items.contains(where: { $0.id == item }) else {
+        guard let item else {
             return nil
         }
         return item
