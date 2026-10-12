@@ -1,3 +1,4 @@
+import NoorUI
 import QuranKit
 
 struct TranslationPageSection: Identifiable, Equatable {
