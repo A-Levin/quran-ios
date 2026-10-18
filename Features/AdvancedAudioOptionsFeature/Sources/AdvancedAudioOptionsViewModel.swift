@@ -61,15 +61,14 @@ final class AdvancedAudioOptionsViewModel: ObservableObject {
     @Published var endAt: EndAtChoice
     @Published var playbackRate: Float
 
-    @Published var focusModeEnabled: Bool {
-        didSet { saveFocusMode() }
-    }
+    @Published var focusModeEnabled: Bool
 
     @Published var repetitionDelay: RepetitionDelay
     @Published var verseDelay: VerseDelay
 
     func play() {
         AudioPreferences.shared.playbackRate = playbackRate
+        saveFocusMode()
         // Only an End at the user picked here becomes the Play up to
         // preference; a deduced one just describes the range they opened.
         if didChooseEndAt, let audioEnd = endAt.audioEnd {

@@ -47,7 +47,6 @@ final class AudioPlaybackViewModel: ObservableObject {
         audioPreferences.$playbackRate.assign(to: &$playbackRate)
         audioPreferences.$audioEnd.assign(to: &$audioEnd)
         audioPreferences.$streamingEnabled.assign(to: &$streamingEnabled)
-        contentStatePreferences.$focusModeEnabled.assign(to: &$focusModeEnabled)
         audioPreferences.$verseRuns.assign(to: &$verseRuns)
         audioPreferences.$verseDelay.assign(to: &$verseDelay)
         audioPreferences.$listRuns.assign(to: &$listRuns)
